@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date:1.9.2025
+## Date: 1-09-25
 
 ## AIM:
 To develop a simple webserver to serve html pages and display the list of protocols in TCP/IP Protocol Suite.
@@ -36,53 +36,26 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
-
+```
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 content = '''
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>HTML Table Example</title>
+<title> My Web Server</title>
 </head>
-<body>
-    <h2>list of protocols in TCP/IP protocol suite</h2>
-
-    <table border="1">
-        <tr>
-            <th>s.no</th>
-            <th>name of layers</th>
-            <th>name of the protocol</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Application layer</td>
-            <td>HTTP,FTP,DNS,Telnet&SSH</td>
-        
-        </tr>
-        <tr>
-             <td>2</td>
-             <td>Transport layer</td>
-             <td>TCP/UDP</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Network layer</td>
-            <td>IPV4,IPV6</td>
-        </tr>
-         <tr>
-            <td>4</td>
-            <td>Link layer layer</td>
-            <td>Ethernet</td>
-        </tr>
-
-           
-    </table>
-
-
+<body bgcolor="cyan">
+<table border="1" align="center" cellpadding="10">
+                <caption><h3>List of Protocols</h3></caption>
+                <tr><th>S.no</th><th>Name of the layers</th><th>Name of the protocols</th></tr>
+                <tr><td>1</td><td>Application Layer</td><td>HTTP, FTP, TELNET, DHCP, DNS</td></tr>
+                <tr><td>2</td><td>Transport Layer</td><td>TCP & UDP</td></tr>
+                <tr><td>3</td><td>Network/Interent Layer</td><td>ICMP, IGMP, ARP, IPv4</td></tr>
+                <tr><td>4</td><td>Data Link/Network Access Layer</td><td>Ethernet</td></tr>
+            </table>
 </body>
-</html>
-'''
+</html>'''
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -96,7 +69,13 @@ print("This is my webserver")
 server_address =('',8000)
 httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
+```
+
+
 ## OUTPUT:
-![alt text](<Screenshot 2025-08-25 135933.png>)
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/71aa058e-d284-4596-8e64-7a0dcf4bc735" />
+
+
 
 ## RESULT:
+The program for implementing simple webserver is executed successfully.
